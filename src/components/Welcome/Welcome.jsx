@@ -1,8 +1,8 @@
-import React from 'react'
+import { WelcomeWrapper } from "./Welcome.styled";
 
 const Welcome = () => {
   return (
-    <div>Welcome</div>
+   <WelcomeWrapper></WelcomeWrapper>
   )
 }
 

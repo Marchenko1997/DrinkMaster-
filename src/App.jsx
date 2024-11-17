@@ -7,7 +7,7 @@ const App = () => {
     <Routes>
       <Route
         path="/welcome"
-        element={<PublicRoute redirectTo="/home" compenent={<WelcomePage />} />}
+        element={<PublicRoute redirectTo="/home" component={<WelcomePage />} />}
       />
     </Routes>
   );

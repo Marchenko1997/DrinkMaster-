@@ -1,68 +1,190 @@
+[data-theme='dark'] {
+  --primary-text-color: #f3f3f3;
+  --background-color: #0a0a11;
+  --popup-bg: #161f37;
+  --footer-bg: transparent;
+  --switcher-ball: #161f37;
+  --border-header: rgba(243, 243, 243, 0.2);
+  --link-bg: #f3f3f3;
+  --link-bg-hover: #f3f3f3;
+  --link-text: #161f37;
+  --secondary-text-color: rgba(243, 243, 243, 0.5);
+  --pagination-color: hsla(220, 59%, 53%, 0.5);
+  --ingredient-bg: rgba(22, 31, 55, 0.5);
+}
+
+[data-theme='light'] {
+  --primary-text-color: #0a0a11;
+  --background-color: #f3f3f3;
+  --popup-bg: #161f37;
+  --footer-bg: #0a0a11;
+  --switcher-ball: #f3f3f3;
+  --border-header: rgba(22, 31, 55, 0.1);
+  --link-bg: #161f37;
+  --link-bg-hover: #434d67;
+  --link-text: #f3f3f3;
+  --secondary-text-color: rgba(10, 10, 17, 0.5);
+  --pagination-color: #4070cd;
+  --ingredient-bg: #161f37;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --background-color-welcome: #0a0a11;
+  --primary-text-color-footer: #f3f3f3;
+  --footer-nav-hover-color: #253d6f;
+  --primary-black-color: #161f37;
+  --primary-text-color-02: rgba(243, 243, 243, 0.2);
+  --primary-text-color-05: rgba(243, 243, 243, 0.5);
+
+  --grey-color: #434d67;
+
+  --red-error-color: #da1414;
+  --red-error-color-05: rgba(218, 20, 20, 0.5);
+
+  --green-success-color: rgba(60, 188, 129, 1);
+  --green-success-color-05: rgba(60, 188, 129, 0.5);
+}
+
+@font-face {
+  font-family: 'Manrope';
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  src: url('/src/fonts/Manrope-Regular.ttf');
 }
 
-a {
+@font-face {
+  font-family: 'Manrope';
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  src: url('/src/fonts/Manrope-Medium.ttf');
 }
-a:hover {
-  color: #535bf2;
+
+@font-face {
+  font-family: 'Manrope';
+  font-weight: 600;
+  src: url('/src/fonts/Manrope-SemiBold.ttf');
 }
 
 body {
-  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: var(--primary-text-color);
+  background-color: var(--background-color);
+}
+
+#root {
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+footer {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_mobile.svg'),
+      url('./assets/images/Hero/right_blur_mobile.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right top 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_tablet.svg'),
+      url('./assets/images/Hero/right_blur_tablet.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      top left,
+      top 150px right;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    background-image: url('./assets/images/Hero/left_blur_desktop.svg'),
+      url('./assets/images/Hero/right_blur_desktop.svg');
+    background-repeat: no-repeat;
+    background-position:
+      top left,
+      top 374px right;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input[type='file'] {
+  color: transparent;
+}
+
+.backdropEditForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.61);
+  z-index: 999;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 80px 10px;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    padding: 80px 20px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
