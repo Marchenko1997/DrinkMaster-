@@ -1,13 +1,13 @@
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import { Route, Routes, useLocation } from "react-router-dom";
-import PublicRoute from "./helpers/PublicRoute";
+import { Route, Routes} from "react-router-dom";
+
 
 const App = () => {
   return (
     <Routes>
       <Route
         path="/welcome"
-        element={<PublicRoute redirectTo="/home" component={<WelcomePage />} />}
+        element={<WelcomePage />}
       />
     </Routes>
   );
