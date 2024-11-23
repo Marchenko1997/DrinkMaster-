@@ -1,15 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import svgr from "vite-plugin-svgr";
+import svgr from "@svgr/rollup";
 
 export default defineConfig({
   plugins: [
+    svgr(), 
     react(),
-    svgr({
-      svgrOptions: {
-        icon: true, // Включение размера как "иконки"
-      },
-    }),
   ],
   resolve: {
     alias: {
@@ -19,5 +15,5 @@ export default defineConfig({
       assets: "/src/assets",
     },
   },
-  base: "/drink-code-frontend", // Базовый путь для деплоя
+  base: "/drink-code-frontend",
 });

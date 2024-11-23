@@ -8,8 +8,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import * as Yup from "yup";
 import { WelcomeWrapper } from "../Welcome/Welcome.styled";
 import Birthday from "./DatePicker.styled";
-import ShowPassword from "../../assets/images/signSvg/eye.svg";
-import HidePassword from "../../assets/images/signSvg/eye-off.svg";
+import { ReactComponent as ShowPassword } from "../../assets/images/signSvg/eye.svg";
+import { ReactComponent as HidePassword } from "../../assets/images/signSvg/eye-off.svg";
 import { authOperations } from "../../redux/auth/auth.operations";
 import {
   Container,
@@ -22,8 +22,8 @@ import {
   CheckSvgStyled,
   Button,
   Link,
+  ToggleButton,
 } from "./SignUpForm.styled";
-import { ToggleButton } from "@mui/material";
 
 const initialValues = {
   name: "",
@@ -93,13 +93,11 @@ function SignUpForm() {
         <Formik
           initialValues={initialValues}
           onSubmit={(values) => {
-            console.log("Submitting form with values:", values); // Лог значений формы при сабмите
             handleSubmit(values);
           }}
           validationSchema={schema}
         >
-                  {({ values, errors, touched }) => (
-                      
+          {({ values, errors, touched }) => (
             <AuthForm>
               <InputWrapper>
                 <Input

@@ -4,6 +4,7 @@ import CheckSvg from "../../assets/images/signSvg/done.svg";
 import ErrorSvg from "../../assets/images/signSvg/error.svg";
 import { NavLink } from "react-router-dom";
 
+
 const transition = "300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)";
 
 export const Container = styled.div`
@@ -83,6 +84,7 @@ export const Input = styled(Field)`
 
 export const InputWrapper = styled.div`
   position: relative;
+ 
 `;
 
 export const Button = styled.button`
@@ -111,6 +113,18 @@ export const Button = styled.button`
   }
 `;
 
+export const ToggleButton = styled.button`
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  padding: 0;
+`;
+
 export const ErrorText = styled.p`
   position: ${({ absolute, select }) =>
     absolute === "true" || select === "true" ? "absolute" : "static"};
@@ -131,13 +145,19 @@ export const ErrorText = styled.p`
 
 ErrorText.shouldForwardProp = (prop) => prop !== "error";
 
-export const ErrorSvgStyled = styled(ErrorSvg)`
+export const ErrorSvgStyled = styled.img.attrs({
+  src: ErrorSvg,
+  alt: "Error icon",
+})`
   position: absolute;
   top: 18px;
   right: 24px;
 `;
 
-export const CheckSvgStyled = styled(CheckSvg)`
+export const CheckSvgStyled = styled.img.attrs({
+  src: CheckSvg,
+  alt: "Check icon",
+})`
   position: absolute;
   top: 18px;
   right: 24px;
