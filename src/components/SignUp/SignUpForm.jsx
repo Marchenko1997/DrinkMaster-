@@ -11,7 +11,19 @@ import Birthday from "./DatePicker.styled";
 import ShowPassword from "../../assets/images/signSvg/eye.svg";
 import HidePassword from "../../assets/images/signSvg/eye-off.svg";
 import { authOperations } from "../../redux/auth/auth.operations";
-import { Container, Title } from "./SignUpForm.styled";
+import {
+  Container,
+  Title,
+  AuthForm,
+  Input,
+  InputWrapper,
+  ErrorText,
+  ErrorSvgStyled,
+  CheckSvgStyled,
+  Button,
+  Link,
+} from "./SignUpForm.styled";
+import { ToggleButton } from "@mui/material";
 
 const initialValues = {
   name: "",
@@ -42,24 +54,142 @@ const schema = Yup.object().shape({
     .matches(/[0-9]/, "Password must contain at least one number"),
 });
 
-const SignUpForm = () => {
-  const [showpassword, setShowPassword] = useState(false);
+function SignUpForm() {
+  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
 
-    const handleTogglePassword = () => {
-        setShowPassword(!showpassword);
-    }
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
-    
-    
+  const handleSubmit = (values) => {
+    const { name, birthday, email, password } = values;
+
+    dispatch(authOperations.signUp({ name, birthday, email, password }))
+      .unwrap()
+      .then(() => {
+        toast.success(
+          `A message with a verification has been sent to your email`,
+          {
+            position: "top-right",
+            autoClose: 5000,
+          }
+        );
+      })
+      .catch((error) => {
+        toast.error(error, {
+          position: "top-right",
+          autoClose: 1500,
+        });
+      });
+  };
+
   return (
     <WelcomeWrapper>
       <Container>
         <ToastContainer transition={Slide} />
         <Title>Sign Up</Title>
+        <Formik
+          initialValues={initialValues}
+          onSubmit={(values) => {
+            console.log("Submitting form with values:", values); // Лог значений формы при сабмите
+            handleSubmit(values);
+          }}
+          validationSchema={schema}
+        >
+                  {({ values, errors, touched }) => (
+                      
+            <AuthForm>
+              <InputWrapper>
+                <Input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  error={errors.name && touched.name ? "true" : "false"}
+                  success={values.name && !errors.name ? "true" : "false"}
+                />
+                <ErrorMessage
+                  name="name"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.name && touched.name ? (
+                  <ErrorSvgStyled />
+                ) : values.name && !errors.name ? (
+                  <CheckSvgStyled />
+                ) : null}
+              </InputWrapper>
+
+              <InputWrapper>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <Birthday />
+                </LocalizationProvider>
+                <ErrorMessage
+                  name="birthday"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
+              </InputWrapper>
+
+              <InputWrapper>
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  error={errors.email && touched.email ? "true" : "false"}
+                  success={values.email && !errors.email ? "true" : "false"}
+                />
+                <ErrorMessage
+                  name="email"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.email && touched.email ? (
+                  <ErrorSvgStyled />
+                ) : values.email && !errors.email ? (
+                  <CheckSvgStyled />
+                ) : null}
+              </InputWrapper>
+
+              <InputWrapper>
+                <Input
+                  type={showPassword ? "text" : "password"}
+                  value={values.password}
+                  name="password"
+                  placeholder="Password"
+                  error={errors.password && touched.password ? "true" : "false"}
+                  success={
+                    values.password && !errors.password ? "true" : "false"
+                  }
+                />
+                <ErrorMessage
+                  name="password"
+                  render={(message) => <ErrorText>{message}</ErrorText>}
+                />
+                {errors.password && touched.password && !values.password && (
+                  <ErrorSvgStyled />
+                )}
+                <ToggleButton
+                  type="button"
+                  value="toggle-password"
+                  onClick={handleTogglePassword}
+                >
+                  {values.password ? (
+                    showPassword ? (
+                      <ShowPassword />
+                    ) : (
+                      <HidePassword />
+                    )
+                  ) : null}
+                </ToggleButton>
+              </InputWrapper>
+
+              <Button type="submit">Sign Up</Button>
+              <Link to="/signin">Sign In</Link>
+            </AuthForm>
+          )}
+        </Formik>
       </Container>
     </WelcomeWrapper>
   );
-};
+}
 
 export default SignUpForm;

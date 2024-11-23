@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { CalendarSvgIcon } from "./CalendarSvgIcon";
-
+import dayjs from "dayjs";
 import { useFormikContext } from "formik";
 
 const transition = "300ms cubic-bezier(0.46, 0.03, 0.52, 0.96)";
@@ -109,9 +109,9 @@ export default function Birthday() {
   return (
     <StyledDesktopDatePicker
       name="birthday"
-      value={null}
+      value={values.birthday ? dayjs(values.birthday) : null}
       onChange={(value) => {
-        const updatedValue = value ? value.format("DD MMM YYYY") : "";
+        const updatedValue = value ? value.format("YYYY-MM-DD") : "";
         setFieldValue("birthday", updatedValue);
       }}
       disableFuture
@@ -135,7 +135,7 @@ export default function Birthday() {
         },
       }}
       format="DD/MM/YYYY"
-      defaultValue={"dd/mm/yyyy"}
+      defaultValue={null}
     />
   );
 }
