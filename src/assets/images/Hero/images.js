@@ -15,15 +15,7 @@ import blue_tea_tablet from './blue_tea_tablet.png'
 import blue_tea_mobile from './blue_tea_mobile.png'
 
 
-/* import blue_tea_desktop_jpg from './blue_tea_desktop.jpg';
-import blue_tea_desktop_1x from './blue_tea_desktop_1x.webp';
-import center_blur_desktop_2x from './blue_tea_desktop_2x.webp';
 
-import blue_tea_mobile_1x from './blue_tea_mobile_1x.webp';
-import blue_tea_mobile_2x from './blue_tea_mobile_2x.webp';
-
-import blue_tea_tablet_1x from './blue_tea_tablet_1x.webp';
-import blue_tea_desktop_2x from './blue_tea_desktop_2x.webp'; */
 
 const images = {
   left_blur_desktop,
