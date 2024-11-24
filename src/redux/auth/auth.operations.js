@@ -40,7 +40,73 @@ const signIn = createAsyncThunk(
   }
 );
 
+const signOut = createAsyncThunk("auth/signout", async (_, thunkAPI) => {
+  try {
+    await instance.post("/auth/signout");
+    authHeaderToken.unset();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data.message);
+  }
+});
+
+const currentUser = createAsyncThunk(
+  "auth/refresh",
+  async (_, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth;
+
+    if (token === null) {
+      return thunkAPI.rejectWithValue("Unable to fetch User");
+    }
+
+    try {
+      authHeaderToken.set(token);
+      const res = await instance.get("/users/current");
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  },
+  {
+    condition: (_, thunkApi) => {
+      const state = thunkApi.getState();
+      const token = state.auth.token;
+      if (!token) return false;
+      return true;
+    },
+  }
+);
+
+export const subscribeEmail = createAsyncThunk(
+  "auth/subscribe",
+  async (data, thunkAPI) => {
+    try {
+      await instance.post("/users/subscribe", data);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  "auth/update",
+  async (data, thunkAPI) => {
+    try {
+      const response = await instance.patch("/users/update", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 export const authOperations = {
-    signUp,
-    signIn,
+  signUp,
+  signIn,
+  signOut,
+  currentUser,
+  subscribeEmail,
+  updateUser,
 };
