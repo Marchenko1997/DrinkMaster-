@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/drink-code-frontend/static/*", "destination": "/static/*" },
+    {
+      "source": "/drink-code-frontend/(.*)",
+      "destination": "/drink-code-frontend/index.html"
+    }
+  ]
 }
