@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/drink-code-frontend/static/*", "destination": "/static/*" },
     {
       "source": "/drink-code-frontend/(.*)",
       "destination": "/index.html"
