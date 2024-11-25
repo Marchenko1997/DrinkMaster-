@@ -3,10 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import svgr from "@svgr/rollup";
 
 export default defineConfig({
-  plugins: [
-    svgr(), 
-    react(),
-  ],
+  base: "/drink-code-frontend/",
+  plugins: [svgr(), react()],
   resolve: {
     alias: {
       src: "/src",
@@ -15,5 +13,4 @@ export default defineConfig({
       assets: "/src/assets",
     },
   },
-  base: "/drink-code-frontend/",
 });

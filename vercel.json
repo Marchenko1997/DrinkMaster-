@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/drink-code-frontend/(.*)",
-      "destination": "/drink-code-frontend/index.html"
+      "destination": "/index.html"
     }
   ]
 }
