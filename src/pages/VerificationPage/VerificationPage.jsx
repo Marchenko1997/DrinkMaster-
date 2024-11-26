@@ -21,7 +21,7 @@ const VerificationPage = () => {
  useEffect(() => {
    if (id) {
      axios
-       .get(`${BASE_URL}/api/auth/verify/${id}`)
+       .get(`${BASE_URL}/auth/verify/${id}`)
        .then(({ data }) => console.log(data))
        .catch((error) => console.error(error));
    }
