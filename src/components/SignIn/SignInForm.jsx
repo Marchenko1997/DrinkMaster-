@@ -102,7 +102,7 @@ const SignInForm = () => {
                     type={showPassword ? "text" : "password"}
                     values={values.password}
                     name="password"
-                    placeholer="Password"
+                    placeholder="Password"
                     error={
                       errors.password && touched.password ? "true" : "false"
                     }
