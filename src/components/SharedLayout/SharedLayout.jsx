@@ -1,9 +1,11 @@
-
+import HeaderMain from "../HeaderMain/HeaderMain";
 
 const SharedLayout = () => {
   return (
-    <div>SharedLayout</div>
-  )
-}
+    <>
+      <HeaderMain />
+    </>
+  );
+};
 
-export default SharedLayout
+export default SharedLayout;
