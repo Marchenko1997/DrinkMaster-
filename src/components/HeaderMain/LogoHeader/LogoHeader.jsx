@@ -1,8 +1,17 @@
 import sprite from "../../../assets/icons/icons.svg";
 import { SvgIcon, LogoLink, IconText } from "./LogoHeader.styled";
 
-const LogoHeader = () => {
-  return <div>LogoHeader</div>;
+const LogoHeader = ({handleClick}) => {
+    return (
+      <>
+        <LogoLink to="/home" onClick={handleClick}>
+          <SvgIcon>
+            <use xlinkHref={`${sprite}#icon-Vector`}></use>
+          </SvgIcon>
+          <IconText>Drink Master</IconText>
+        </LogoLink>
+      </>
+    );
 };
 
 export default LogoHeader;
