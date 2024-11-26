@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { authOperations } from "./redux/auth/auth.operations";
 import SignInPage from "./pages/SignInPageTemp/SignInPageTemp";
 import SignUpPage from "./pages/SignUpPageTemp/SignUpPageTemp";
+import VerificationPage from "./pages/VerificationPage/VerificationPage";
 
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -29,6 +30,7 @@ const App = () => {
 
   return (
     <Routes>
+      <Route path="/user/:id" element={<VerificationPage />} />
       <Route
         path="/welcome"
         element={<PublicRoute redirectTo="/home" component={<WelcomePage />} />}
@@ -39,15 +41,18 @@ const App = () => {
       />
       <Route
         path="/signin"
-        element={<PublicRoute redirectTo="/home"component={<SignInPage/>} />}
+        element={<PublicRoute redirectTo="/home" component={<SignInPage />} />}
       />
       <Route
-       path="/" element={!isLoggedIn ? <WelcomePage/> : <SharedLayout/>}
+        path="/"
+        element={!isLoggedIn ? <WelcomePage /> : <SharedLayout />}
       >
         <Route
           index
           path="/home"
-          element={ <PrivateRoute redirectTo="/welcome" component={<HomePage/>} />}
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<HomePage />} />
+          }
         />
       </Route>
     </Routes>
