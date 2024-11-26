@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import svgr from "@svgr/rollup";
 
 export default defineConfig({
-  base: "/drink-code-frontend/",
+  base: "/",
   plugins: [svgr(), react()],
   resolve: {
     alias: {

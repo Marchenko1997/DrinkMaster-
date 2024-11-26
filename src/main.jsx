@@ -10,7 +10,7 @@ import { store } from "./redux/store";
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/drink-code-frontend">
+      <BrowserRouter >
         <App />
       </BrowserRouter>
     </Provider>
