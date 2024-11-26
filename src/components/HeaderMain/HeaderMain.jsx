@@ -1,6 +1,7 @@
 import { MainHeader, MobileBox, NavigationHeader } from "./Header.styled";
 import LogoHeader from "./LogoHeader/LogoHeader";
 import NavMenu from "./NavMenu/NavMenu";
+import ToggleDesktop from "./ToggleDesktop/ToggleDesktop";
 
 const HeaderMain = () => {
   return (
@@ -8,7 +9,9 @@ const HeaderMain = () => {
       <NavigationHeader>
         <LogoHeader />
         <NavMenu />
-        <MobileBox></MobileBox>
+              <MobileBox>
+            <ToggleDesktop/>
+        </MobileBox>
       </NavigationHeader>
     </MainHeader>
   );
