@@ -87,6 +87,18 @@ export const subscribeEmail = createAsyncThunk(
   }
 );
 
+export const themeThunk = createAsyncThunk(
+  "auth/theme",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const res = await instance.patch("/users/theme", payload);
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const updateUser = createAsyncThunk(
   "auth/update",
   async (data, thunkAPI) => {

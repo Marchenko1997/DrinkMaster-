@@ -1,19 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit"; 
+import { createSlice } from "@reduxjs/toolkit";
 import { authOperations } from "./auth.operations";
 
 const initialState = {
-    user: { name: "", email: "", birthday: "", avatar: "" },
-    token: "",
-    isLoggedIn: false,
-    isRefreshing: false,
-    isSubscribed: false,
-    theme: "dark",
+  user: { name: "", email: "", birthday: "", avatar: "" },
+  token: "",
+  isLoggedIn: false,
+  isRefreshing: false,
+  isSubscribed: false,
+  theme: "dark",
 };
 
 const authSlice = createSlice({
-    name: "auth",
-    initialState,
-    extraReducers: (builder) =>
+  name: "auth",
+  initialState,
+  reducers: {
+    toggleTheme(state) {
+      state.theme = state.theme === "dark" ? "light" : "dark";
+    },
+  },
+  extraReducers: (builder) =>
     builder
       .addCase(authOperations.signUp.fulfilled, (state, { payload }) => {
         state.user = payload.user;
@@ -26,13 +31,13 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(authOperations.signOut.fulfilled, (state) => {
-        state.user = { name: '', email: '', birthday: '', avatar: '' };
-        state.token = '';
+        state.user = { name: "", email: "", birthday: "", avatar: "" };
+        state.token = "";
         state.isLoggedIn = false;
       })
       .addCase(authOperations.signOut.rejected, (state) => {
-        state.user = { name: '', email: '', birthday: '', avatar: '' };
-        state.token = '';
+        state.user = { name: "", email: "", birthday: "", avatar: "" };
+        state.token = "";
         state.isLoggedIn = false;
       })
       .addCase(authOperations.currentUser.pending, (state) => {
@@ -55,5 +60,6 @@ const authSlice = createSlice({
       }),
 });
 
-
 export const authReducer = authSlice.reducer;
+
+export const { toggleTheme } = authSlice.actions;
