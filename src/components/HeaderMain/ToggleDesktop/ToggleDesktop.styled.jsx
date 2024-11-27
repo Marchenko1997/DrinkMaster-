@@ -23,7 +23,7 @@ export const ThemeBtnIcon = styled.svg`
 `;
 
 export const ThemeBtnBall = styled.svg.withConfig({
-  shouldForwardProp: (prop) => "isdark" !== prop,
+  shouldForwardProp: (prop) => "isDark" !== prop,
 })`
   width: 26px;
   height: 26px;
@@ -32,6 +32,6 @@ export const ThemeBtnBall = styled.svg.withConfig({
   top: 0%;
   left: 6%;
   transform: ${(props) =>
-    props.isdark === "dark" ? "translateX(0)" : "translateX(76%)"};
+    props.isDark === "dark" ? "translateX(0)" : "translateX(76%)"};
   transition: all 400ms ease;
 `;
