@@ -1,5 +1,6 @@
-import sprite from "../../../assets/icons/icons.svg";
+import sprite from "/src/assets/icons/icons.svg";
 import { SvgIcon, LogoLink, IconText } from "./LogoHeader.styled";
+
 
 const LogoHeader = ({handleClick}) => {
     return (
