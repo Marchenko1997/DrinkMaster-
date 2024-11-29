@@ -25,7 +25,6 @@ const HeaderMain = () => {
 
   const handleClick = () => setIsOpenMenu(false);
 
-
   return (
     <MainHeader>
       <NavigationHeader>
@@ -34,7 +33,10 @@ const HeaderMain = () => {
         <MobileBox>
           <ToggleDesktop isOpenMenu={isOpenMenu} />
           {!isOpenMenu && <UserMenu />}
-          <BurgerMenuButton isOpenMenu={isOpenMenu} setIsOpenMenu={setIsOpenMenu} />
+          <BurgerMenuButton
+            isOpenMenu={isOpenMenu}
+            setIsOpenMenu={setIsOpenMenu}
+          />
         </MobileBox>
         {isOpenMenu && !isDesktop && <MobileMenu handleClick={handleClick} />}
       </NavigationHeader>
