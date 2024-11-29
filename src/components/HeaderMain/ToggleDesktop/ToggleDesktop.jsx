@@ -5,7 +5,7 @@ import {
 } from "./ToggleDesktop.styled";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "@mui/material";
-import sprite from "/src/assets/icons/icons.svg";
+const sprite = "/icons.svg";
 
 const ToggleDesktop = ({ isOpenMenu }) => {
   const [isDark, setIsDark] = useState(localStorage.getItem("theme"));

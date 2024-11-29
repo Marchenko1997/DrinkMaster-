@@ -1,5 +1,5 @@
 import { BtnBurger, SvgIconBurger } from "./BurgerMenuButton.styled";
-import sprite from "../../../assets/icons/icons.svg";
+const sprite = "/icons.svg";
 
 const BurgerMenuButton = ({ isOpenMenu, setIsOpenMenu }) => {
     const toggleBurgerMenu = () => setIsOpenMenu(prev => !prev);
