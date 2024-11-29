@@ -1,5 +1,5 @@
-const sprite = "/icons.svg";
 import { SvgIcon, LogoLink, IconText } from "./LogoHeader.styled";
+const sprite = "/icons.svg";
 
 const LogoHeader = ({ handleClick }) => {
   return (
