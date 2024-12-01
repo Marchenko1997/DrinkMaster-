@@ -42,10 +42,16 @@ const EditProfileForm = ({
   const handleClick = () => setIsEditOpen(false);
 
   const handleUploadAvatar = (e) => {
-    const nameOfFile = e.target.files[0];
+      const nameOfFile = e.target.files[0];
+      console.log("Selected file:", nameOfFile);
+      if (!nameOfFile) {
+        console.warn("No file selected for upload.");
+        return;
+      }
     setFileAvatar(nameOfFile);
     const fileURL = URL.createObjectURL(nameOfFile);
-    setImageURL(fileURL);
+      setImageURL(fileURL);
+       console.log("Preview image URL set:", fileURL);
   };
 
   const handleChangeUserName = (e) => {
@@ -58,12 +64,14 @@ const EditProfileForm = ({
   };
 
   const onSubmitChanges = (event) => {
-    event.preventDefault();
+      event.preventDefault();
+        console.log("Submitting changes with the following data:");
     if (name !== newUserName) {
       formData.append("name", newUserName);
     }
     if (fileAvatar) {
-      formData.append("avatarURL", fileAvatar);
+        formData.append("avatar", fileAvatar);
+        console.log("Added new avatar to formData:", fileAvatar);
     }
     dispatch(updateUser(formData))
       .unwrap()

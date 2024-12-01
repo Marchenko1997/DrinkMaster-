@@ -13,7 +13,8 @@ import { useDispatch } from "react-redux";
 const sprite = "/icons.svg";
 
 const LogoutSure = ({ setIsOpenLogout }) => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    
 
   const handleClick = () => setIsOpenLogout(false);
 

@@ -7,9 +7,11 @@ export const instance = axios.create({
 
 const authHeaderToken = {
   set(token) {
+    console.log("Устанавливаем токен в заголовок Authorization:", token);
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
+    console.log("Удаляем токен из заголовка Authorization");
     instance.defaults.headers.common.Authorization = "";
   },
 };
