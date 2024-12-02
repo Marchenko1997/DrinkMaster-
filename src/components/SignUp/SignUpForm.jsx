@@ -1,6 +1,5 @@
 import { Formik, ErrorMessage } from "formik";
-import { ToastContainer, toast, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {  toast } from "react-toastify";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -88,7 +87,6 @@ function SignUpForm() {
   return (
     <WelcomeWrapper>
       <Container>
-        <ToastContainer transition={Slide} />
         <Title>Sign Up</Title>
         <Formik
           initialValues={initialValues}

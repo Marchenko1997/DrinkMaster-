@@ -1,6 +1,5 @@
 import { ErrorMessage, Formik } from "formik";
-import { ToastContainer, toast, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
@@ -50,6 +49,7 @@ const SignInForm = () => {
 
   const handleSubmit = (values) => {
     const { email, password } = values;
+
     dispatch(authOperations.signIn({ email, password }))
       .unwrap()
       .then(() => {
@@ -65,11 +65,9 @@ const SignInForm = () => {
         });
       });
   };
-
   return (
     <WelcomeWrapper>
       <Container>
-        <ToastContainer transition={Slide} />
         <Title>Sign In</Title>
         <Formik
           initialValues={initialValues}

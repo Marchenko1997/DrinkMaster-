@@ -11,7 +11,6 @@ import SignInPage from "./pages/SignInPageTemp/SignInPageTemp";
 import SignUpPage from "./pages/SignUpPageTemp/SignUpPageTemp";
 import VerificationPage from "./pages/VerificationPage/VerificationPage";
 
-
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 
 const App = () => {
@@ -24,9 +23,10 @@ const App = () => {
   }
 
   useEffect(() => {
-    dispatch(authOperations.currentUser());
-  }, [dispatch]);
-
+    if (!isLoggedIn) {
+      dispatch(authOperations.currentUser());
+    }
+  }, [isLoggedIn, dispatch]);
 
   return (
     <Routes>
