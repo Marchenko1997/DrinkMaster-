@@ -42,36 +42,29 @@ const EditProfileForm = ({
   const handleClick = () => setIsEditOpen(false);
 
   const handleUploadAvatar = (e) => {
-      const nameOfFile = e.target.files[0];
-      console.log("Selected file:", nameOfFile);
-      if (!nameOfFile) {
-        console.warn("No file selected for upload.");
-        return;
-      }
+    const nameOfFile = e.target.files[0];
+    if (!nameOfFile) {
+      return;
+    }
     setFileAvatar(nameOfFile);
     const fileURL = URL.createObjectURL(nameOfFile);
-      setImageURL(fileURL);
-       console.log("Preview image URL set:", fileURL);
+    setImageURL(fileURL);
   };
 
   const handleChangeUserName = (e) => {
     const newName = e.target.value;
-    if (newName === name) {
-      return;
-    } else {
+    if (newName !== name) {
       setNewUserName(newName);
     }
   };
 
   const onSubmitChanges = (event) => {
-      event.preventDefault();
-        console.log("Submitting changes with the following data:");
+    event.preventDefault();
     if (name !== newUserName) {
       formData.append("name", newUserName);
     }
     if (fileAvatar) {
-        formData.append("avatar", fileAvatar);
-        console.log("Added new avatar to formData:", fileAvatar);
+      formData.append("avatar", fileAvatar);
     }
     dispatch(updateUser(formData))
       .unwrap()
@@ -131,7 +124,7 @@ const EditProfileForm = ({
                 name="name"
                 id="name"
                 defaultValue={name}
-                readOnly={!editName ? true : false}
+                readOnly={!editName}
                 onChange={handleChangeUserName}
               />
               <EditNameButton
@@ -143,7 +136,7 @@ const EditProfileForm = ({
                 </SvgIcon>
               </EditNameButton>
             </LabelChangeName>
-            <SaveChangeBtn type="submit">Sava changes</SaveChangeBtn>
+            <SaveChangeBtn type="submit">Save changes</SaveChangeBtn>
           </FormEdit>
         </div>
       </ModalWindow>
