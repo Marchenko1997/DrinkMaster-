@@ -1,9 +1,12 @@
-
+import Hero from "../../components/Hero/Hero";
+import { StyledHomePage } from "./HomePage.styled.jsx";
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
-  )
+    <StyledHomePage className="container">
+      <Hero />
+    </StyledHomePage>
+  );
 }
 
 export default HomePage
