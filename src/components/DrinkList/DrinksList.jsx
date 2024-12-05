@@ -1,9 +1,9 @@
 import DrinkItem from "./DrinkItem/DrinkItem"
 
-const DrinkList = () => {
+const DrinksList = () => {
   return (
     <div><DrinkItem/></div>
   )
 }
 
-export default DrinkList
+export default DrinksList
