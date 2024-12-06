@@ -4,7 +4,7 @@ import {
   CategoryListsContainer,
   OtherDrinksLink,
 } from "./HomePage.styled.jsx";
-import DrinksList from "../../components/DrinkList/DrinksList.jsx";
+import DrinksList from "../../components/DrinksList/DrinksList.jsx";
 import { useEffect } from "react";
 import { Loader } from "../../components/Loader/Loader.jsx";
 import { useSelector, useDispatch } from "react-redux";
