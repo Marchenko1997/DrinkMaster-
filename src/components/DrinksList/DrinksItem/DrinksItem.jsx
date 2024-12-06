@@ -6,7 +6,7 @@ import {
   ContentContainer,
   DrinkName,
   SeeMoreLink,
-} from "./DrinkItem.styled";
+} from "./DrinksItem.styled";
 
 const DrinkItem = ({ img, id, drinkName }) => {
   return (
