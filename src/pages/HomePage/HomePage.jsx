@@ -21,9 +21,9 @@ const HomePage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  // useEffect(() => {
-  //   dispatch(fetchHomePageDrinks());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchHomePageDrinks());
+  }, [dispatch]);
 
   return (
     <StyledHomePage className="container">
