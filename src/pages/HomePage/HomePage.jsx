@@ -40,7 +40,7 @@ const HomePage = () => {
         <DrinksList drinks={drinks} title={"Shake"} key={"Shake"} />
         <DrinksList
           drinks={drinks}
-          title={"Other/unknown"}
+          title={"Other/Unknown"}
           key={"OtherUnknown"}
         />
       </CategoryListsContainer>

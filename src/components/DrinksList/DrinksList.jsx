@@ -39,7 +39,7 @@ const DrinksList = ({ title, drinks }) => {
           <DrinksItem
             key={drink._id}
             id={drink._id}
-            drinkName={drink.drinkName}
+            drinkName={drink.drink}
             img={drink.drinkThumb}
           />
         ))}
