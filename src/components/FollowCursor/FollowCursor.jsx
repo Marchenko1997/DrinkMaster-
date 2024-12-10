@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyledFollowCursor } from "./StyledFollowCursor";
+import { StyledFollowCursor } from "./FollowCursor.styled.jsx";
 
 const FollowCursor = () => {
   const [cursorPosition, setCursorPosition] = useState({ left: 0, top: 0 });
