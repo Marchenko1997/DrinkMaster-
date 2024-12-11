@@ -16,7 +16,7 @@ export const StyledSearchButton = styled.button`
   width: 28px;
   height: 28px;
   background: transparent;
-  color: #f3f3f3;
+  color: var(--text-color);
   text-align: center;
 
   @media screen and (min-width: 768px) {
@@ -26,6 +26,16 @@ export const StyledSearchButton = styled.button`
 `;
 
 export const SearchBarStyled = styled.div`
+  --bg-color: #161f37; 
+  --text-color: #f3f3f3; 
+  --border-color: #f3f3f3; 
+
+  &[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #cccccc;
+  }
+
   .SearchForm {
     display: flex;
     padding: 18px;
@@ -33,8 +43,8 @@ export const SearchBarStyled = styled.div`
     width: 100%;
     max-width: 335px;
     height: 56px;
-    background-color: transparent;
-    border: 1px solid #f3f3f3;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color); 
     border-radius: 30px;
     overflow: hidden;
   }
@@ -57,7 +67,7 @@ export const SearchBarStyled = styled.div`
     display: inline-block;
     width: 100%;
     font: inherit;
-    color: #f3f3f3;
+    color: var(--text-color); 
     font-size: 20px;
     border: none;
     outline: none;
@@ -69,6 +79,7 @@ export const SearchBarStyled = styled.div`
   .SearchForm-input::placeholder {
     font: inherit;
     font-size: 18px;
+    color: var(--text-color); 
   }
 
   @media (min-width: 768px) {
