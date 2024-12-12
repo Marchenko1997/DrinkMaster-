@@ -17,7 +17,6 @@ const SearchSelectCategory = ({ setCategory }) => {
         onChange={searchByCategory}
       >
         <option value="hide">All categories</option>
-        <option value="hide">All categories</option>
         <option value="ordinary drink">Ordinary Drink</option>
         <option value="cocktail">Cocktail</option>
         <option value="shake">Shake</option>

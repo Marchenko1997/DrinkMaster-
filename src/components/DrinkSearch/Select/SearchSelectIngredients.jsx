@@ -1,12 +1,12 @@
 import { SearchSelectStyled } from "./SearchSelect.styled.jsx";
 
 
-const SearchSelectIngredients = ({ setIngridient }) => {
+const SearchSelectIngredients = ({ setIngredient }) => {
     const searchByIngridient = (event) => { 
         event.preventDefault();
         const ingridientParam = event.target.value;
-        if (ingridientParam === "hide") setIngridient("");
-        else setIngridient(ingridientParam);
+        if (ingridientParam === "hide") setIngredient("");
+        else setIngredient(ingridientParam);
     }
   return (
     <SearchSelectStyled>
