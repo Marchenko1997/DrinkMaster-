@@ -67,7 +67,10 @@ export const SearchingContainer = styled.div`
     gap: 20px;
     margin-top: 62px;
   }
+  
 `;
+
+
 
 export const StyledDivNotFound = styled.div`
   margin-top: 40px;
