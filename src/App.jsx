@@ -13,6 +13,7 @@ import VerificationPage from "./pages/VerificationPage/VerificationPage";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const DrinksPage = lazy(() => import("./pages/DrinksPage/DrinksPage"));
+const AddDrinkPage = lazy(() => import("./pages/AddDrinkPage/AddDrinkPage"));
 
 const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -57,8 +58,14 @@ const App = () => {
         />
         <Route
           path="/drinks"
-          element={ 
-            <PrivateRoute redirectTo="/welcome" component={<DrinksPage/>} />
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<DrinksPage />} />
+          }
+        />
+        <Route
+          path="/add"
+          element={
+            <PrivateRoute redirectTo="welcome" component={<AddDrinkPage />} />
           }
         />
       </Route>
