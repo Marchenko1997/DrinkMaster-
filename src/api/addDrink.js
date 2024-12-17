@@ -1,0 +1,31 @@
+import axios from "axios";
+
+export const addDrinkToDB = async (data) => {
+  const stringValue = localStorage.getItem("persist:auth");
+
+  const objectValue = JSON.parse(stringValue);
+
+  const token = objectValue.token;
+
+  const parseToken = JSON.parse(token);
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${parseToken}`,
+      "Content-Type": "multipart/form-data",
+    },
+  };
+
+  try {
+    const resp = await axios.post(
+      `https://drinkmaster-backend-xthk.onrender.com/api/drinks/own/add`,
+      data,
+      config
+    );
+    return resp;
+  } catch (error) {
+    console.error("Помилка при отриманні даних:", error);
+
+    throw error;
+  }
+};
