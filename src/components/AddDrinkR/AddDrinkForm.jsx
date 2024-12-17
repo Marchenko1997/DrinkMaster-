@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 import DrinkDescription from "./DrinkDeskription/DrinkDeskription";
-// import Ingredients from "./Ingredients/Ingredients";
+import Ingredients from "./Ingredients/Ingredients";
 // import Recipe from "./Recipe/Recipe";
 import { addDrinktoDB } from "../../api/addDrink";
 import { initialValues } from "./initialValues";
@@ -71,8 +71,8 @@ const AddDrinkForm = () => {
             pictureActive={pictureActive}
             setPictureActive={setPictureActive}
           />
-          {/* <Ingredients formik={formik} />
-          <Recipe formik={formik} /> */}
+          <Ingredients formik={formik} /> 
+          {/* <Recipe formik={formik} />  */}
           <SubmitButton type="submit">Add</SubmitButton>
         </AddForm>
       </>
