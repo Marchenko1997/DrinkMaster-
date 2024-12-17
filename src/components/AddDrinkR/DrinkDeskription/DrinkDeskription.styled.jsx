@@ -200,13 +200,43 @@ export const CategoryInput = styled.select`
   text-align: end;
   width: 170px;
   border-radius: 200px;
-  background-color: transparent;
-  border-radius: 200px;
-  color: var(--secondary-text-color);
+  background-color: transparent; 
   cursor: pointer;
+
+
+  [data-theme="dark"] & {
+    color: rgba(
+      243,
+      243,
+      243,
+      0.5
+    ); 
+    &:hover {
+      background-color: #161f37; 
+    }
+    &:focus {
+      background-color: #161f37; 
+      outline: none;
+      border: 1px solid #f3f3f3; 
+    }
+  }
+
+  [data-theme="light"] & {
+    color: rgba(10, 10, 17, 0.5); 
+    &:hover {
+      background-color: #f3f3f3; 
+    }
+    &:focus {
+      background-color: #f3f3f3; 
+      outline: none;
+      border: 1px solid #0a0a11; 
+    }
+  }
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     font-size: 16px;
   }
+
   @media screen and (min-width: 1280px) {
     font-size: 16px;
   }

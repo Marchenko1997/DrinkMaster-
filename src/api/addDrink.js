@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const addDrinkToDB = async (data) => {
+export const addDrinktoDB = async (data) => {
   const stringValue = localStorage.getItem("persist:auth");
 
   const objectValue = JSON.parse(stringValue);

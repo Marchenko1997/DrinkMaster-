@@ -24,7 +24,7 @@ import {
 import { selectUser } from "../../../redux/selectors/auth.selectors";
 const sprite = "/icons.svg";
 
-const DrinkDeskription = ({
+const DrinkDescription = ({
   formik,
   setFileAvatar,
   pictureActive,
@@ -37,7 +37,6 @@ const DrinkDeskription = ({
   const handleUploadAvatar = (e) => {
     const currentFile = e.target.files[0];
     if (!currentFile) return;
-
     const checkEndOfName =
       currentFile.name.endsWith(".jpg") || currentFile.name.endsWith(".png");
     if (!checkEndOfName) {
@@ -60,6 +59,7 @@ const DrinkDeskription = ({
           name="drinkThumb"
           className="visually-hidden"
           onChange={handleUploadAvatar}
+          required
         />
         {!pictureActive && <ImageLabel htmlFor="drinkThumb">+</ImageLabel>}
         {pictureActive && (
@@ -88,9 +88,9 @@ const DrinkDeskription = ({
       <TabletContainer>
         <DrinkLabel htmlFor="drinkInput">Enter item title</DrinkLabel>
         <DrinkInput
-          id="drinkInput"
           type="text"
           name="drink"
+          id="drinkInput"
           value={formik.values.drink}
           onChange={formik.handleChange}
           required
@@ -108,22 +108,26 @@ const DrinkDeskription = ({
           <SelectLabel>Category</SelectLabel>
           <CategoryInput name="category" onChange={formik.handleChange}>
             <option value="undefined">Category</option>
-            {CATEGORY.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
+            {CATEGORY.map((category, index) => {
+              return (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              );
+            })}
           </CategoryInput>
         </PositionContainer>
         <PositionContainer>
-          <SelectLabel>Glass</SelectLabel>
+          <SelectLabel className="glassmargin">Glass</SelectLabel>
           <CategoryInput name="glass" onChange={formik.handleChange}>
             <option value="undefined">Glass</option>
-            {GLASSES.map((galss, index) => (
-              <option key={index} value={galss}>
-                {galss}
-              </option>
-            ))}
+            {GLASSES.map((glass, index) => {
+              return (
+                <option key={index} value={glass}>
+                  {glass}
+                </option>
+              );
+            })}
           </CategoryInput>
         </PositionContainer>
         <RadioMainContainer>
@@ -144,10 +148,11 @@ const DrinkDeskription = ({
               type="radio"
               id="non-alcoholic"
               name="alcoholic"
-              value="Non alcoholic"
-              checked={formik.values.alcoholic === "Non alcoholic"}
+              value="Non-alcoholic"
               onChange={formik.handleChange}
+              checked={formik.values.alcoholic === "Non-alcoholic"}
             />
+            <label htmlFor="non-alcoholic">Non-alcoholic</label>
           </RadioSecondaryContainer>
         </RadioMainContainer>
       </TabletContainer>
@@ -155,4 +160,4 @@ const DrinkDeskription = ({
   );
 };
 
-export default DrinkDeskription;
+export default DrinkDescription;
