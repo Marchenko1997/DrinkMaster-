@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import DrinkDescription from "./DrinkDeskription/DrinkDeskription";
 import Ingredients from "./Ingredients/Ingredients";
-// import Recipe from "./Recipe/Recipe";
+import Recipe from "./Recipe/Recipe";
 import { addDrinktoDB } from "../../api/addDrink";
 import { initialValues } from "./initialValues";
 import { SectionTitle, SubmitButton, AddForm } from "./AddDrinkForm.styled";
@@ -72,7 +72,7 @@ const AddDrinkForm = () => {
             setPictureActive={setPictureActive}
           />
           <Ingredients formik={formik} /> 
-          {/* <Recipe formik={formik} />  */}
+          <Recipe formik={formik} /> 
           <SubmitButton type="submit">Add</SubmitButton>
         </AddForm>
       </>
