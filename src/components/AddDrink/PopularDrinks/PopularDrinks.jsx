@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPopularDrinks } from "../../../redux/drinks/drinks.operations";
 import { selectPopularDrinks } from "/src/redux/selectors/drinks.selectors.js";
+import FollowUs from "../FollowUs/FollowUs";
+
 import {
   DrinkDescription,
   NameDrink,
@@ -12,7 +14,6 @@ import {
   AsideContainer,
   TitleFollowUs,
 } from "./PopularDrinks.styled";
-import FollowUs from "../FollowUs/FollowUs";
 
 export const PopularDrinks = () => {
   const popDrinks = useSelector(selectPopularDrinks);
@@ -26,7 +27,9 @@ export const PopularDrinks = () => {
     <AsideContainer>
       <TitleFollowUs>Follow Us</TitleFollowUs>
       <FollowUs />
+
       <TitlePopularDrinks>Popular drinks</TitlePopularDrinks>
+
       <Content>
         {popDrinks.map((drinkPop) => {
           const { drink, description, drinkThumb, _id } = drinkPop;
