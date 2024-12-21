@@ -15,6 +15,7 @@ const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const DrinksPage = lazy(() => import("./pages/DrinksPage/DrinksPage"));
 const AddDrinkPage = lazy(() => import("./pages/AddDrinkPage/AddDrinkPage"));
 const DrinkPage = lazy(() => import("./pages/DrinkPage/DrinkPage"));
+const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
 
 const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -73,6 +74,12 @@ const App = () => {
           path="/drink/:id"
           element={
             <PrivateRoute redirectTo="/welcome" component={<DrinkPage />} />
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<ErrorPage />} />
           }
         />
       </Route>
