@@ -124,15 +124,16 @@ export const deleteFromFavorites = createAsyncThunk(
   }
 );
 
-export const fetchDrinkDetails = createAsyncThunk(
+const fetchDrinkDetails = createAsyncThunk(
   "coctails/fetchDrinkDetails",
   async (id, thunkAPI) => {
-      console.log("Fetching drink details with ID:", id);
+    console.log("Fetching drink details for ID:", id); // Логируем ID
     try {
       const { data } = await instance.get(`/drinks/${id}`);
+      console.log("Data received:", data); // Логируем ответ от API
       return data;
     } catch (error) {
-        console.error("Error fetching drink details:", error.message); 
+      console.error("Error fetching drink details:", error.message); // Логируем ошибку
       return thunkAPI.rejectWithValue(error.message);
     }
   }
