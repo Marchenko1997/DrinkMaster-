@@ -128,7 +128,7 @@ export const fetchDrinkDetails = createAsyncThunk(
   "coctails/fetchDrinkDetails",
   async (id, thunkAPI) => {
     try {
-      const { data } = await instance.get(`/drinks//${id}`);
+      const { data } = await instance.get(`/drinks/${id}`);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
