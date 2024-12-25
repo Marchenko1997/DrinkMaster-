@@ -16,7 +16,7 @@ const DrinksItem = ({ id, name, img }) => {
       </StyledCocktailImageContainer>
       <StyledDrinkInfo>
         <StyledCocktailName>{name}</StyledCocktailName>
-        <NavLink to={`/drinks/${id}`}>
+        <NavLink to={`/drink/${id}`}>
           <StyledCocktailSeeMore>See more</StyledCocktailSeeMore>
         </NavLink>
       </StyledDrinkInfo>

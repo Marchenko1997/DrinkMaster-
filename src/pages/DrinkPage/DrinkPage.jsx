@@ -34,6 +34,7 @@ const DrinkPage = () => {
 
   useEffect(() => {
     dispatch(fetchFavoriteCocktails());
+     console.log("Dispatching fetchDrinkDetails with ID:", id);
     dispatch(fetchDrinkDetails(id));
   }, [dispatch, id]);
 
