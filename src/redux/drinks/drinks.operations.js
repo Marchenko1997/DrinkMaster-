@@ -127,12 +127,10 @@ export const deleteFromFavorites = createAsyncThunk(
 export const fetchDrinkDetails = createAsyncThunk(
   "coctails/fetchDrinkDetails",
   async (id, thunkAPI) => {
-      console.log("Fetching drink details with ID:", id);
     try {
       const { data } = await instance.get(`/drinks/${id}`);
       return data;
     } catch (error) {
-        console.error("Error fetching drink details:", error.message); 
       return thunkAPI.rejectWithValue(error.message);
     }
   }

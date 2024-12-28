@@ -34,9 +34,10 @@ const DrinkPage = () => {
 
   useEffect(() => {
     dispatch(fetchFavoriteCocktails());
-     console.log("Dispatching fetchDrinkDetails with ID:", id);
     dispatch(fetchDrinkDetails(id));
   }, [dispatch, id]);
+
+    
 
   const notifyAdd = () => {
     toast("Drink added to favorites", {
@@ -118,6 +119,7 @@ const DrinkPage = () => {
                 <ul className="ingred-list">
                   {drinkDetails.ingredients.map(
                     ({ ingredientId, title, measure }) => (
+                      
                       <li className="ingred-item" key={title}>
                         <div className="img-container">
                           <img

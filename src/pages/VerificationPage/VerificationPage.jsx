@@ -16,7 +16,7 @@ import {
 
 const VerificationPage = () => {
   const { id } = useParams();
-  console.log(id);
+ 
 
  useEffect(() => {
    if (id) {
