@@ -9,7 +9,8 @@ import {
   // DocsContainer,
   // DocsSubContainer,
 } from "./Footer.styled";
-import  SocialLinks  from "../SocialLinks/SocialLinks.jsx";
+import SocialLinks from "../SocialLinks/SocialLinks.jsx";
+import SubscriptionForm from "./SubscriptionForm/SubscriptionForm.jsx";
 
 const Footer = () => {
   return (
@@ -20,9 +21,9 @@ const Footer = () => {
             <Logo />
             <SocialLinks />
           </LogoAndSocialContainer>
-
           <FooterNavigation />
         </FooterNavContainer>
+        <SubscriptionForm/>
       </NavAndFormContainer>
     </FooterContainer>
   );
