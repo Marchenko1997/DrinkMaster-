@@ -1,9 +1,11 @@
-import Logo from "../Logo/Logo"
+import { Logo } from "./Logo/Logo.jsx";
+import  FooterNavigation  from "./FooterNavigation/FooterNavigation";
 
 const Footer = () => {
   return (
       <div>
-        <Logo />
+          <Logo />
+          <FooterNavigation />
     </div>
   )
 }
