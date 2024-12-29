@@ -16,6 +16,7 @@ const DrinksPage = lazy(() => import("./pages/DrinksPage/DrinksPage"));
 const AddDrinkPage = lazy(() => import("./pages/AddDrinkPage/AddDrinkPage"));
 const DrinkPage = lazy(() => import("./pages/DrinkPage/DrinkPage"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"));
+const MyDrinksPage = lazy(() => import("./pages/MyDrinksPage/MyDrinksPage"));
 
 const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -68,6 +69,12 @@ const App = () => {
           path="/add"
           element={
             <PrivateRoute redirectTo="welcome" component={<AddDrinkPage />} />
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute redirectTo="/welcome" component={<MyDrinksPage />} />
           }
         />
         <Route
