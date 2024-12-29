@@ -22,7 +22,7 @@ export const addDrinktoDB = async (data) => {
       data,
       config
     );
-    return resp;
+    return resp.data;
   } catch (error) {
     console.error("Помилка при отриманні даних:", error);
 

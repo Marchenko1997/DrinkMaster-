@@ -48,7 +48,6 @@ export const StyledCocktailDescription = styled.p`
   @media screen and (min-width: 768px) {
     font-size: 16px;
     line-height: 1.375;
-    height: 110px;
     -webkit-line-clamp: 5;
   }
 `;

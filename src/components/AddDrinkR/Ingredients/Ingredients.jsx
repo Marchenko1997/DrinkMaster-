@@ -40,7 +40,7 @@ const Ingredients = ({ formik }) => {
     newIngredients[index] = {
       ...newIngredients[index],
       [name]: value,
-      imgredientId: selectedIngredient._id.$oid,
+      ingredientId: selectedIngredient._id.$oid,
     };
     setIngredients(newIngredients);
   };
