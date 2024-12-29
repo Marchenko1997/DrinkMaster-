@@ -13,7 +13,7 @@ import {
   selectOwnCocktails,
   selectTotalOwnCocktails,
 } from "../../redux/selectors/drinks.selectors.js";
-import { StyledDivNotFound } from "./MyDrinks.styled.js";
+import { StyledDivNotFound } from "./MyDrinksPage.styled.jsx";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
