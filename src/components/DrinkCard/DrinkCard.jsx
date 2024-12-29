@@ -10,7 +10,7 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from "./DrinkCard.styled";
-import sprite from "/src/assets/icons/icons.svg";
+import sprite from "../../../public/icons.svg";
 import { StyledCocktailImageContainer } from "../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled";
 import { deleteFromFavorites } from "../../redux/drinks/drinks.operations";
 
