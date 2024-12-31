@@ -84,6 +84,7 @@ export const StyledDrinkInfo = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 342px;
+    margin-top: 6px;
   }
 
   @media screen and (min-width: 1280px) {
