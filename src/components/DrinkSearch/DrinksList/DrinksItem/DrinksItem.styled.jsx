@@ -9,7 +9,6 @@ export const StyledCocktailWrapper = styled.li`
   @media screen and (min-width: 768px) {
     row-gap: 14px;
     width: 342px;
-    margin-bottom: 0;
   }
 
   @media screen and (min-width: 1280px) {
@@ -19,6 +18,7 @@ export const StyledCocktailWrapper = styled.li`
 
 export const StyledCocktailImageContainer = styled.div`
   position: relative;
+  margin-bottom: 14px;
 
   &:before {
     content: "";
@@ -35,6 +35,10 @@ export const StyledCocktailImageContainer = styled.div`
       rgba(10, 10, 17, 0.96) 95.31%
     );
     z-index: 1;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 0px;
   }
 `;
 
@@ -84,7 +88,6 @@ export const StyledDrinkInfo = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 342px;
-    margin-top: 6px;
   }
 
   @media screen and (min-width: 1280px) {
