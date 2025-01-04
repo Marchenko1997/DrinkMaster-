@@ -8,6 +8,7 @@ import { persistor, store } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "modern-normalize/modern-normalize.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
