@@ -7,8 +7,8 @@ import { selectIsLoggedIn } from "./redux/selectors/auth.selectors";
 import { lazy, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { authOperations } from "./redux/auth/auth.operations";
-import SignInPage from "./pages/SignInPageTemp/SignInPageTemp";
-import SignUpPage from "./pages/SignUpPageTemp/SignUpPageTemp";
+import SignInPage from "./pages/SignInPage/SignInPage";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import VerificationPage from "./pages/VerificationPage/VerificationPage";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
