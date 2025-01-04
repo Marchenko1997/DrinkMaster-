@@ -10,12 +10,12 @@ import {
   StyledCocktailWrapper,
   StyledDeleteButton,
 } from "./DrinkCard.styled";
-import sprite from "../../../public/icons.svg";
 import { StyledCocktailImageContainer } from "../DrinkSearch/DrinksList/DrinksItem/DrinksItem.styled";
 import {
   deleteOwnCocktail,
   fetchOwnCoctails,
 } from "../../redux/drinks/drinks.operations";
+const sprite = "/icons.svg";
 
 const OwnDrinkCard = ({ name, description, alcoholic, imgUrl, id }) => {
   const dispatch = useDispatch();
