@@ -6,7 +6,7 @@
 
 ## Project Overview 🍹
 
-This is my personal project,[Drink Master ](https://drink-master-psi.vercel.app/signup), developed to showcase a full-cycle web application, including both frontend and responsive backend development. The platform is designed for cocktail enthusiasts who appreciate the culture and variety of beverages. It provides seamless access to an extensive library of drinks, allowing users to search, browse, and explore a wide range of options.
+This is my personal project, [Drink Master ](https://drink-master-psi.vercel.app/signup), developed to showcase a full-cycle web application, including both frontend and responsive backend development. The platform is designed for cocktail enthusiasts who appreciate the culture and variety of beverages. It provides seamless access to an extensive library of drinks, allowing users to search, browse, and explore a wide range of options.
 
 Key features include the ability to save favorite cocktails, create personalized drink recipes, and navigate an intuitive interface optimized for all devices 📱💻. The project highlights my expertise in building a robust full-stack solution, ensuring a responsive and efficient user experience 🌟.
 
@@ -24,8 +24,8 @@ Key features include the ability to save favorite cocktails, create personalized
 
 ## Backend ⚙️
 
-[Backend Deployment: Live Server 🌍](https://drinkmaster-backend-xthk.onrender.com)
-[API Documentation: Swagger Docs 📄]( https://drinkmaster-backend-xthk.onrender.com/api-docs/)
+- [Backend Deployment: Live Server 🌍](https://drinkmaster-backend-xthk.onrender.com)
+- [API Documentation: Swagger Docs 📄]( https://drinkmaster-backend-xthk.onrender.com/api-docs/)
 
 ---
 
