@@ -1,6 +1,6 @@
 import PublicRoute from "./helpers/PublicRoute";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 import { PrivateRoute } from "./helpers/PrivateRoute";
 import { selectIsLoggedIn } from "./redux/selectors/auth.selectors";
@@ -22,17 +22,20 @@ const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
 const App = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  if (isLoggedIn && location.pathname === "/") {
-    location.pathname = "/home";
-  }
 
   useEffect(() => {
     if (!isLoggedIn) {
       dispatch(authOperations.currentUser());
     }
   }, [isLoggedIn, dispatch]);
+
+  useEffect(() => {
+    if (isLoggedIn && location.pathname === "/") {
+      navigate("home", { replace: true });
+    }
+  }, [isLoggedIn, location.pathname, navigate]);
 
   return (
     <Routes>
