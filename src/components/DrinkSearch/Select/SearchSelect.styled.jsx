@@ -5,74 +5,52 @@ export const SearchSelectStyled = styled.div`
     cursor: pointer;
     display: inline-block;
     position: relative;
-    font-family: Manrope;
-    font-weight: regular;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
     font-size: 17px;
     color: #f3f3f3;
     width: 335px;
     height: 56px;
-    border: 1px solid transparent;
     border-radius: 30px;
   }
+
   .select-styled {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 100%;
+    height: 100%;
+
     background-color: #161f37;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f3f3f3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+
     border: 2px solid transparent;
     border-radius: 30px;
-    padding: 10px;
-    @include transition(all 0.2s ease-in);
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-color: #f3f3f3 transparent transparent transparent;
-      position: absolute;
-      top: 16px;
-      right: 10px;
-    }
-    &:hover {
-      background-color: darken(#4070cd, 2);
-      border-color: transparent transparent #4070cd transparent;
-    }
-    &:active,
-    &.active {
-      background-color: darken(#4070cd, 5);
-      border-radius: 20px;
-      &:after {
-        top: 9px;
-        border-color: transparent transparent #4070cd transparent;
-      }
-    }
-  }
+    padding: 10px 40px 10px 16px;
 
-  .select-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    font-family: Manrope, sans-serif;
+    font-size: 17px;
     color: #f3f3f3;
-    background-color: darken(#161f37, 5);
-    border-radius: 20px;
-    li {
-      font-family: Manrope;
-      margin: 0;
-      padding: 16px 0;
-      text-indent: 20px;
-      border-top: 4px solid darken(#161f37, 10);
 
-      @include transition(all 0.15s ease-in);
-      &:hover,
-      &.is-selected {
-        color: #f3f3f3;
-        background: $select-color;
-      }
-      &[rel="hide"] {
-        display: none;
-      }
+    transition: all 0.2s ease-in;
+    outline: none;
+
+    &:hover {
+      background-color: #3a65c0;
+      border-color: #4070cd;
+    }
+
+    &:active,
+    &:focus {
+      background-color: #345dba;
+      border-radius: 20px;
+    }
+
+    option {
+      background-color: #161f37;
+      color: #f3f3f3;
     }
   }
 

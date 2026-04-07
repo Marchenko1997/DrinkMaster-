@@ -95,19 +95,37 @@ export const SelectInnerContainer = styled.div`
 `;
 
 export const IngredientSelect = styled.select`
+  appearance: none;
+  -webkit-appearance: none;
+
   width: 200px;
   height: 50px;
-  padding: 12px 15px;
+  padding: 12px 40px 12px 15px;
+
   border: 1px solid var(--secondary-text-color);
   border-radius: 200px;
   background-color: var(--background-color);
   color: var(--primary-text-color);
   cursor: pointer;
 
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f3f3f3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+
+  outline: none;
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+
+  option {
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+  }
+
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 332px;
     height: 56px;
   }
+
   @media screen and (min-width: 1280px) {
     width: 316px;
     height: 56px;
